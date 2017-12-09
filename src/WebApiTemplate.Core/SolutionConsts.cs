@@ -4,6 +4,8 @@ namespace WebApiTemplate
     {
         public const string LocalizationSourceName = SolutionStructure.SolutionName;
 
-        public const string ConnectionStringName = "Default";
+        public const string MainDatabaseConnectionStringName = "MainDatabaseConnectionString";
+
+        public const string MainDatabaseConnectionProviderName = "MainDatabaseConnectionProvider";
     }
 }
