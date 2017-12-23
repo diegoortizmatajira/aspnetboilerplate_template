@@ -24,12 +24,11 @@ namespace WebApiTemplate.EntityFrameworkCore
 
         public static void ConfigureMainDbContext(
            DbContextOptionsBuilder<MainDbContext> dbContextOptions,
-           IConfigurationRoot config
+           string provider,
+           string connectionString
            )
         {
-            var Provider = config.GetConnectionString(SolutionConsts.MainDatabaseConnectionProviderName);
-            var ConnectionString = config.GetConnectionString(SolutionConsts.MainDatabaseConnectionStringName);
-            ConfigureProvider(dbContextOptions, Provider, ConnectionString);
+            ConfigureProvider(dbContextOptions, provider, connectionString);
         }
     }
 }

@@ -7,20 +7,20 @@ using Microsoft.AspNetCore.Mvc;
 namespace WebApiTemplate.WebApi.Controllers
 {
     [Route("api/[controller]")]
-    public class ValuesController : Controller
+    public class ValuesController : SolutionApiControllerBase
     {
         // GET api/values
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new string[] { L("HelloWorld"), L("Home_Description") };
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
         public string Get(int id)
         {
-            return "value";
+            return L("HelloWorld");
         }
 
         // POST api/values
