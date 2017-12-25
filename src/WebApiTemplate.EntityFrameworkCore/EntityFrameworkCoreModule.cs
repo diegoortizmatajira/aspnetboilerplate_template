@@ -6,13 +6,13 @@ using WebApiTemplate.Core;
 namespace WebApiTemplate.EntityFrameworkCore
 {
     [DependsOn(
-        typeof(SolutionCoreModule),
+        typeof(CoreModule),
         typeof(AbpEntityFrameworkCoreModule))]
-    public class SolutionEntityFrameworkCoreModule : AbpModule
+    public class EntityFrameworkCoreModule : AbpModule
     {
         public override void Initialize()
         {
-            IocManager.RegisterAssemblyByConvention(typeof(SolutionEntityFrameworkCoreModule).GetAssembly());
+            IocManager.RegisterAssemblyByConvention(typeof(EntityFrameworkCoreModule).GetAssembly());
         }
     }
 }

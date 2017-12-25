@@ -6,7 +6,7 @@ using Abp.Reflection.Extensions;
 
 namespace WebApiTemplate.Core.Localization
 {
-    public static class SolutionLocalizationConfigurer
+    public static class LocalizationConfigurer
     {
         public static void Configure(ILocalizationConfiguration localizationConfiguration)
         {
@@ -16,8 +16,8 @@ namespace WebApiTemplate.Core.Localization
             localizationConfiguration.Sources.Add(
                 new DictionaryBasedLocalizationSource(SolutionConsts.LocalizationSourceName,
                     new JsonEmbeddedFileLocalizationDictionaryProvider(
-                        typeof(SolutionLocalizationConfigurer).GetAssembly(),
-                        $"{SolutionStructure.SolutionName}.Localization.SourceFiles"
+                        typeof(LocalizationConfigurer).GetAssembly(),
+                        $"{SolutionStructure.CoreProjectName}.Localization.SourceFiles"
                     )
                 )
             );

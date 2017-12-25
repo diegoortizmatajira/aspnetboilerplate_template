@@ -6,13 +6,13 @@ using WebApiTemplate.Core;
 namespace WebApiTemplate.Application
 {
     [DependsOn(
-       typeof(SolutionCoreModule),
+       typeof(CoreModule),
        typeof(AbpAutoMapperModule))]
-    public class SolutionApplicationModule : AbpModule
+    public class ApplicationModule : AbpModule
     {
         public override void Initialize()
         {
-            IocManager.RegisterAssemblyByConvention(typeof(SolutionApplicationModule).GetAssembly());
+            IocManager.RegisterAssemblyByConvention(typeof(ApplicationModule).GetAssembly());
         }
     }
 }

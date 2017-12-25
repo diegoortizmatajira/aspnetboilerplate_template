@@ -11,14 +11,14 @@ using WebApiTemplate.EntityFrameworkCore;
 namespace WebApiTemplate.WebApi.Startup
 {
     [DependsOn(
-     typeof(SolutionApplicationModule),
-     typeof(SolutionEntityFrameworkCoreModule),
+     typeof(ApplicationModule),
+     typeof(EntityFrameworkCoreModule),
      typeof(AbpAspNetCoreModule))]
-    public class SolutionWebApiModule : AbpModule
+    public class WebApiModule : AbpModule
     {
         private readonly IConfigurationRoot _appConfiguration;
 
-        public SolutionWebApiModule(IHostingEnvironment env)
+        public WebApiModule(IHostingEnvironment env)
         {
             _appConfiguration = AppConfigurations.Get(env.ContentRootPath, env.EnvironmentName);
         }
@@ -29,13 +29,13 @@ namespace WebApiTemplate.WebApi.Startup
 
             Configuration.Modules.AbpAspNetCore()
                 .CreateControllersForAppServices(
-                    typeof(SolutionApplicationModule).GetAssembly()
+                    typeof(ApplicationModule).GetAssembly()
                 );
         }
 
         public override void Initialize()
         {
-            IocManager.RegisterAssemblyByConvention(typeof(SolutionWebApiModule).GetAssembly());
+            IocManager.RegisterAssemblyByConvention(typeof(WebApiModule).GetAssembly());
         }
     }
 }

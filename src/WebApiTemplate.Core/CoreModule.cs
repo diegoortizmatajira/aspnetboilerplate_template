@@ -4,18 +4,18 @@ using WebApiTemplate.Core.Localization;
 
 namespace WebApiTemplate.Core
 {
-    public class SolutionCoreModule : AbpModule
+    public class CoreModule : AbpModule
     {
         public override void PreInitialize()
         {
             Configuration.Auditing.IsEnabledForAnonymousUsers = true;
 
-            SolutionLocalizationConfigurer.Configure(Configuration.Localization);
+            LocalizationConfigurer.Configure(Configuration.Localization);
         }
 
         public override void Initialize()
         {
-            IocManager.RegisterAssemblyByConvention(typeof(SolutionCoreModule).GetAssembly());
+            IocManager.RegisterAssemblyByConvention(typeof(CoreModule).GetAssembly());
         }
     }
 }

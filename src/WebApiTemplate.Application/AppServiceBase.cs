@@ -2,9 +2,9 @@ using Abp.Application.Services;
 
 namespace WebApiTemplate.Application
 {
-    public abstract class SolutionAppServiceBase : ApplicationService
+    public abstract class AppServiceBase : ApplicationService
     {
-        protected SolutionAppServiceBase()
+        protected AppServiceBase()
         {
             LocalizationSourceName = SolutionConsts.LocalizationSourceName;
         }

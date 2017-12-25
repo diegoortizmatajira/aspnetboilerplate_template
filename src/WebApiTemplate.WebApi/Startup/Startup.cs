@@ -43,7 +43,7 @@ namespace WebApiTemplate.WebApi.Startup
             });
 
             //Configure Abp and Dependency Injection
-            return services.AddAbp<SolutionWebApiModule>(options =>
+            return services.AddAbp<WebApiModule>(options =>
             {
                 //Configure Log4Net logging
                 options.IocManager.IocContainer.AddFacility<LoggingFacility>(
