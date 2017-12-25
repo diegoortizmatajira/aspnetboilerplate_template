@@ -11,14 +11,12 @@ namespace WebApiTemplate.EntityFrameworkCore
         {
             switch (provider.ToUpper())
             {
-                case "POSTGRESQL":
-                    dbContextOptions.UseNpgsql(connectionString);
-                    break;
                 case "SQLSERVER":
                     dbContextOptions.UseSqlServer(connectionString);
                     break;
                 default:
-                    throw new AbpInitializationException("Debe especificar un proveedor de base de datos (POSTGRESQL o SQLSERVER)");
+                    dbContextOptions.UseNpgsql(connectionString);
+                    break;
             }
         }
 
