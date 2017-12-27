@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Swashbuckle.AspNetCore.Swagger;
 using WebApiTemplate.EntityFrameworkCore;
 
 namespace WebApiTemplate.WebApi.Startup
@@ -36,12 +37,15 @@ namespace WebApiTemplate.WebApi.Startup
                 DbContextOptionsConfigurer.ConfigureMainDbContext(options.DbContextOptions, options.ConnectionString, string.Empty);
             });
 
-
             services.AddMvc(options =>
             {
                 options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
             });
 
+            services.AddSwaggerGen(c =>
+                {
+                    c.SwaggerDoc("v1", new Info { Title = "Microservice API", Version = "v1" });
+                });
             //Configure Abp and Dependency Injection
             return services.AddAbp<WebApiModule>(options =>
             {
@@ -56,7 +60,12 @@ namespace WebApiTemplate.WebApi.Startup
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             app.UseAbp();
-            
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Microservice API V1");
+            });
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
