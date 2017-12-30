@@ -33,8 +33,8 @@ namespace WebApiTemplate.WebApi.Startup
             //Configure DbContext
             services.AddAbpDbContext<MainDbContext>(options =>
             {
-                //TODO: Asegurar el provider
-                DbContextOptionsConfigurer.ConfigureMainDbContext(options.DbContextOptions, options.ConnectionString, string.Empty);
+                //TODO: Ensure provider from Configuration
+                DbContextOptionsConfigurer.ConfigureMainDbContext(options.DbContextOptions, options.ConnectionString, "POSTGRESQL");
             });
 
             services.AddMvc(options =>
