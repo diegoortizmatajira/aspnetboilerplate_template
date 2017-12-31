@@ -2,9 +2,9 @@ using Abp.AspNetCore.Mvc.Controllers;
 
 namespace WebApiTemplate.WebApi.Controllers
 {
-    public class SolutionApiControllerBase : AbpController
+    public class ApiControllerBase : AbpController
     {
-        protected SolutionApiControllerBase()
+        protected ApiControllerBase()
         {
             LocalizationSourceName = SolutionConsts.LocalizationSourceName;
         }
