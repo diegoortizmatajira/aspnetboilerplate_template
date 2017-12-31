@@ -1,0 +1,12 @@
+{
+    "author": "Diego Leonard Ortiz Matajira",
+    "classifications": ["Solution"],
+    "name": "ABP WebApi",
+    "identity": "ABP.WebAPI",
+    "shortName": "abpwebapi",
+    "tags": {
+        "language": "C#"
+    },
+    "sourceName": "WebApiTemplate",
+    "preferNameDirectory": "true"
+}
