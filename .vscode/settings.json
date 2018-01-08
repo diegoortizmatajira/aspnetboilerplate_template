@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "Dockerfile.development":"dockerfile",
+        "Dockerfile.debug":"dockerfile"
+    }
+}
