@@ -10,30 +10,14 @@ services:
       - 'tenants-database:/var/lib/postgresql/data'
     environment:
       POSTGRES_PASSWORD: D3s4rr0ll0
-  webapi-service:
-    build:
-      context: .
-      dockerfile: Dockerfile
+  webapi_service:
+    image: 'webapi_image:latest'
     ports:
       - '80:80'
     networks:
       - backend
-    volumes:
-      - '.:/app'
-      - /app/src/WebApiTemplate.Application/obj
-      - /app/src/WebApiTemplate.Application/bin
-      - /app/src/WebApiTemplate.Core/obj
-      - /app/src/WebApiTemplate.Core/bin
-      - /app/src/WebApiTemplate.EntityFrameworkCore/obj
-      - /app/src/WebApiTemplate.EntityFrameworkCore/bin
-      - /app/src/WebApiTemplate.WebApi/obj
-      - /app/src/WebApiTemplate.WebApi/bin
-      - /app/test/WebApiTemplate.Test/obj
-      - /app/test/WebApiTemplate.Test/bin
-      - /app/test/WebApiTemplate.WebApi.Test/obj
-      - /app/test/WebApiTemplate.WebApi.Test/bin
-      - '~/.nuget:/root/.nuget'
-      - /root/.nuget/packages/.tools
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
     depends_on:
       - postgresql-database
 networks:

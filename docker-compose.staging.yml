@@ -1,0 +1,10 @@
+version: '3'
+services:
+  webapi_service:
+    image: 'webapi_image:staging'
+    build:
+      context: .
+      dockerfile: ./src/WebApiTemplate.WebApi/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Staging
+

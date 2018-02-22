@@ -1,7 +1,25 @@
 version: '3'
 services:
-  webapi-service:
+  webapi_service:
+    image: 'webapi_image:debug'
     build:
-      dockerfile: Dockerfile.debug
+      context: .
+      dockerfile: ./src/WebApiTemplate.WebApi/Dockerfile.debug
+    volumes:
+      - '.:/code'
+      - /code/src/WebApiTemplate.Application/obj
+      - /code/src/WebApiTemplate.Application/bin
+      - /code/src/WebApiTemplate.Core/obj
+      - /code/src/WebApiTemplate.Core/bin
+      - /code/src/WebApiTemplate.EntityFrameworkCore/obj
+      - /code/src/WebApiTemplate.EntityFrameworkCore/bin
+      - /code/src/WebApiTemplate.WebApi/obj
+      - /code/src/WebApiTemplate.WebApi/bin
+      - /code/test/WebApiTemplate.Test/obj
+      - /code/test/WebApiTemplate.Test/bin
+      - /code/test/WebApiTemplate.WebApi.Test/obj
+      - /code/test/WebApiTemplate.WebApi.Test/bin
+      - '~/.nuget:/root/.nuget'
+      - /root/.nuget/packages/.tools      
     environment:
       - ASPNETCORE_ENVIRONMENT=Development

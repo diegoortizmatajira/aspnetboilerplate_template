@@ -1,12 +1,24 @@
 {
     "author": "Diego Leonard Ortiz Matajira",
     "classifications": ["Solution"],
-    "name": "ABP WebApi",
+    "name": "ABP WebApi (With Docker support)",
     "identity": "ABP.WebAPI",
     "shortName": "abpwebapi",
     "tags": {
         "language": "C#"
     },
     "sourceName": "WebApiTemplate",
-    "preferNameDirectory": "true"
+    "preferNameDirectory": "true",
+    "symbols": {
+        "service-name": {
+            "type": "parameter", 
+            "defaultValue": "webapi_service",
+            "replaces": "webapi_service"
+        },
+        "image-name": {
+            "type": "parameter",
+            "defaultValue": "webapi_image",
+            "replaces": "webapi_image"
+        }
+    }
 }
