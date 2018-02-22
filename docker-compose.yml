@@ -1,26 +1,25 @@
-version: "3"
+version: '3'
 services:
-  postgresql-database: 
+  postgresql-database:
     image: postgres
-    ports: 
-      - 5432:5432
+    ports:
+      - '5432:5432'
     networks:
       - backend
-    volumes: 
-      - tenants-database:/var/lib/postgresql/data
+    volumes:
+      - 'tenants-database:/var/lib/postgresql/data'
     environment:
       POSTGRES_PASSWORD: D3s4rr0ll0
-
   webapi-service:
     build:
       context: .
       dockerfile: Dockerfile
     ports:
-      - 80:80
+      - '80:80'
     networks:
       - backend
     volumes:
-      - .:/app
+      - '.:/app'
       - /app/src/WebApiTemplate.Application/obj
       - /app/src/WebApiTemplate.Application/bin
       - /app/src/WebApiTemplate.Core/obj
@@ -33,11 +32,11 @@ services:
       - /app/test/WebApiTemplate.Test/bin
       - /app/test/WebApiTemplate.WebApi.Test/obj
       - /app/test/WebApiTemplate.WebApi.Test/bin
-      - ~/.nuget:/root/.nuget
-      - /root/.nuget/packages/.tools 
-    depends_on: 
+      - '~/.nuget:/root/.nuget'
+      - /root/.nuget/packages/.tools
+    depends_on:
       - postgresql-database
 networks:
-  backend:
+  backend: null
 volumes:
-  tenants-database:
+  tenants-database: null

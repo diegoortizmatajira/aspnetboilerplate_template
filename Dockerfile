@@ -1,6 +1,6 @@
 FROM microsoft/aspnetcore-build:2 AS builder
 VOLUME /app
-WORKDIR /app
+WORKDIR /app/src/WebApiTemplate.WebApi
 RUN mkdir /publish
 RUN dotnet publish -c Release -o /publish
 

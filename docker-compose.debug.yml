@@ -2,6 +2,6 @@ version: '3'
 services:
   webapi-service:
     build:
-      dockerfile: Dockerfile.development
+      dockerfile: Dockerfile.debug
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
