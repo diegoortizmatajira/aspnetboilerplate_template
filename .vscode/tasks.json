@@ -7,12 +7,177 @@
             "label": "build",
             "command": "dotnet build",
             "type": "shell",
-            "group": "build",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
             "presentation": {
                 "focus": true,
-                "reveal": "always"
+                "reveal": "silent"
             },
             "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "DockerBuildForDebug",
+            "presentation": {
+                "focus": true,
+                "reveal": "silent"
+            },
+            "linux": {
+                "command": "/bin/bash",
+                "options": {
+                    "cwd": "${workspaceRoot}"
+                },
+                "args": [
+                    "-c",
+                    "./dockerTask.sh build debug"
+                ]
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "DockerBuildForDevelopment",
+            "presentation": {
+                "focus": true,
+                "reveal": "silent"
+            },
+            "linux": {
+                "command": "/bin/bash",
+                "options": {
+                    "cwd": "${workspaceRoot}"
+                },
+                "args": [
+                    "-c",
+                    "./dockerTask.sh build development"
+                ]
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "DockerBuildForStaging",
+            "presentation": {
+                "focus": true,
+                "reveal": "silent"
+            },
+            "linux": {
+                "command": "/bin/bash",
+                "options": {
+                    "cwd": "${workspaceRoot}"
+                },
+                "args": [
+                    "-c",
+                    "./dockerTask.sh build staging"
+                ]
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "DockerComposeForDebug",
+            "presentation": {
+                "focus": true,
+                "reveal": "silent"
+            },
+            "linux": {
+                "command": "/bin/bash",
+                "options": {
+                    "cwd": "${workspaceRoot}"
+                },
+                "args": [
+                    "-c",
+                    "./dockerTask.sh compose debug"
+                ]
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "DockerRecomposeForDebug",
+            "presentation": {
+                "focus": true,
+                "reveal": "silent"
+            },
+            "linux": {
+                "command": "/bin/bash",
+                "options": {
+                    "cwd": "${workspaceRoot}"
+                },
+                "args": [
+                    "-c",
+                    "./dockerTask.sh composeForDebug"
+                ]
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "DockerComposeForDevelopment",
+            "presentation": {
+                "focus": true,
+                "reveal": "silent"
+            },
+            "linux": {
+                "command": "/bin/bash",
+                "options": {
+                    "cwd": "${workspaceRoot}"
+                },
+                "args": [
+                    "-c",
+                    "./dockerTask.sh compose development"
+                ]
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "DockerComposeForStaging",
+            "presentation": {
+                "focus": true,
+                "reveal": "silent"
+            },
+            "linux": {
+                "command": "/bin/bash",
+                "options": {
+                    "cwd": "${workspaceRoot}"
+                },
+                "args": [
+                    "-c",
+                    "./dockerTask.sh compose staging"
+                ]
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "DockerComposeForProduction",
+            "presentation": {
+                "focus": true,
+                "reveal": "silent"
+            },
+            "linux": {
+                "command": "/bin/bash",
+                "options": {
+                    "cwd": "${workspaceRoot}"
+                },
+                "args": [
+                    "-c",
+                    "./dockerTask.sh compose production"
+                ]
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "DockerClean",
+            "presentation": {
+                "focus": true,
+                "reveal": "silent"
+            },
+            "linux": {
+                "command": "/bin/bash",
+                "options": {
+                    "cwd": "${workspaceRoot}"
+                },
+                "args": [
+                    "-c",
+                    "./dockerTask.sh clean"
+                ]
+            },
+            "problemMatcher": []
         }
     ]
 }

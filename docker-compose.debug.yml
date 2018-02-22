@@ -1,10 +1,10 @@
 version: '3'
 services:
   webapi_service:
-    image: 'webapi_image:development'
+    image: 'webapi_image:debug'
     build:
       context: .
-      dockerfile: ./src/WebApiTemplate.WebApi/Dockerfile.development
+      dockerfile: ./src/WebApiTemplate.WebApi/Dockerfile.debug
     volumes:
       - '.:/code'
       - /code/src/WebApiTemplate.Application/obj

@@ -12,7 +12,7 @@ namespace WebApiTemplate.EntityFrameworkCore
         {
             var builder = new DbContextOptionsBuilder<MainDbContext>();
             var configuration = AppConfigurations.Get(WebContentDirectoryFinder.CalculateContentRootFolder());
-            var Provider = configuration.GetConnectionString(SolutionConsts.MainDatabaseConnectionProviderName);
+            var Provider = configuration[SolutionConsts.MainDatabaseConnectionProviderName];
             var ConnectionString = configuration.GetConnectionString(SolutionConsts.MainDatabaseConnectionStringName);
 
             DbContextOptionsConfigurer.ConfigureMainDbContext(builder, Provider, ConnectionString);

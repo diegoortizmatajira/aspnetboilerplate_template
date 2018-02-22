@@ -1,0 +1,7 @@
+FROM microsoft/aspnetcore-build:2.0
+ENV DOTNET_USE_POLLING_FILE_WATCHER=true
+EXPOSE 80
+VOLUME /code
+WORKDIR /code/src/WebApiTemplate.WebApi
+ENTRYPOINT dotnet restore \
+  && dotnet watch run

@@ -13,7 +13,7 @@ namespace WebApiTemplate.WebApi.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            return new string[] { L("HelloWorld"), L("Home_Description") };
+            return new string[] { L("HelloWorld"), L("Home_Description"), "Entrada Manual", "Otro" };
         }
 
         // GET api/values/5
