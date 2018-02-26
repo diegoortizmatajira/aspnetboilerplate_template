@@ -12,13 +12,13 @@
     "symbols": {
         "service-name": {
             "type": "parameter", 
-            "defaultValue": "webapi_service",
-            "replaces": "webapi_service"
+            "defaultValue": "web_service",
+            "replaces": "web_service"
         },
         "image-name": {
             "type": "parameter",
-            "defaultValue": "webapi_image",
-            "replaces": "webapi_image"
+            "defaultValue": "web_image",
+            "replaces": "web_image"
         }
     }
 }

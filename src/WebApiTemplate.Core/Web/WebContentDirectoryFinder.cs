@@ -11,11 +11,11 @@ namespace WebApiTemplate.Core.Web
             var coreAssemblyDirectoryPath = Path.GetDirectoryName(AppContext.BaseDirectory);
             if (coreAssemblyDirectoryPath == null)
             {
-                throw new Exception($"Could not find location of {SolutionStructure.CoreProjectName} assembly!");
+                throw new Exception($"Could not find location of {WebApiTemplateSolutionStructure.CoreProjectName} assembly!");
             }
 
             var directoryInfo = new DirectoryInfo(coreAssemblyDirectoryPath);
-            while (!DirectoryContains(directoryInfo.FullName, $"{SolutionStructure.SolutionName}.sln"))
+            while (!DirectoryContains(directoryInfo.FullName, $"{WebApiTemplateSolutionStructure.SolutionName}.sln"))
             {
                 if (directoryInfo.Parent == null)
                 {
@@ -25,7 +25,7 @@ namespace WebApiTemplate.Core.Web
                 directoryInfo = directoryInfo.Parent;
             }
 
-            return Path.Combine(directoryInfo.FullName, $"src{Path.DirectorySeparatorChar}{SolutionStructure.WebApiProjectName}");
+            return Path.Combine(directoryInfo.FullName, $"src{Path.DirectorySeparatorChar}{WebApiTemplateSolutionStructure.WebApiProjectName}");
         }
 
         private static bool DirectoryContains(string directory, string fileName)

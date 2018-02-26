@@ -9,8 +9,8 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "DockerRecomposeForDebug",
-            "program": "/code/src/WebApiTemplate.WebApi/bin/Debug/netcoreapp2.0/WebApiTemplate.WebApi.dll",
-            "cwd": "/code/src/WebApiTemplate.WebApi",
+            "program": "/code/src/WebApiTemplate.Web/bin/Debug/netcoreapp2.0/WebApiTemplate.Web.dll",
+            "cwd": "/code/src/WebApiTemplate.Web",
             "launchBrowser": {
                 "enabled": true,
                 "args": "${auto-detect-url}",
@@ -30,7 +30,7 @@
             },
             "sourceFileMap": {
                 "/code": "${workspaceRoot}",
-                "/code/src/WebApiTemplate.WebApi/Views": "${workspaceRoot}/src/WebApiTemplate.WebApi/Views"
+                "/code/src/WebApiTemplate.Web/Views": "${workspaceRoot}/src/WebApiTemplate.Web/Views"
             },
             "pipeTransport": {
                 "debuggerPath": "/vsdbg/vsdbg",

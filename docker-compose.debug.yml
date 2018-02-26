@@ -1,10 +1,10 @@
 version: '3'
 services:
-  webapi_service:
-    image: 'webapi_image:debug'
+  web_service:
+    image: 'web_image:debug'
     build:
       context: .
-      dockerfile: ./src/WebApiTemplate.WebApi/Dockerfile.debug
+      dockerfile: ./src/WebApiTemplate.Web/Dockerfile.debug
     volumes:
       - '.:/code'
       - /code/src/WebApiTemplate.Application/obj
@@ -13,12 +13,12 @@ services:
       - /code/src/WebApiTemplate.Core/bin
       - /code/src/WebApiTemplate.EntityFrameworkCore/obj
       - /code/src/WebApiTemplate.EntityFrameworkCore/bin
-      - /code/src/WebApiTemplate.WebApi/obj
-      - /code/src/WebApiTemplate.WebApi/bin
-      - /code/test/WebApiTemplate.Test/obj
-      - /code/test/WebApiTemplate.Test/bin
-      - /code/test/WebApiTemplate.WebApi.Test/obj
-      - /code/test/WebApiTemplate.WebApi.Test/bin
+      - /code/src/WebApiTemplate.Web/obj
+      - /code/src/WebApiTemplate.Web/bin
+      - /code/test/WebApiTemplate.Tests/obj
+      - /code/test/WebApiTemplate.Tests/bin
+      - /code/test/WebApiTemplate.Web.Tests/obj
+      - /code/test/WebApiTemplate.Web.Tests/bin
       - '~/.nuget:/root/.nuget'
       - /root/.nuget/packages/.tools      
     environment:

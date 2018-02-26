@@ -10,8 +10,8 @@ services:
       - 'tenants-database:/var/lib/postgresql/data'
     environment:
       POSTGRES_PASSWORD: D3s4rr0ll0
-  webapi_service:
-    image: 'webapi_image:latest'
+  web_service:
+    image: 'web_image:latest'
     ports:
       - '80:80'
     networks:

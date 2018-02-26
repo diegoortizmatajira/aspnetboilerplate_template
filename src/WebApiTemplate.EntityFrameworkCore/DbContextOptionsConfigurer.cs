@@ -7,26 +7,11 @@ namespace WebApiTemplate.EntityFrameworkCore
     public static class DbContextOptionsConfigurer
     {
 
-        private static void ConfigureProvider(DbContextOptionsBuilder<MainDbContext> dbContextOptions, string provider, string connectionString)
+        public static void Configure(
+           DbContextOptionsBuilder<WebApiTemplateDbContext> dbContextOptions,
+           string connectionString)
         {
-            switch (provider.ToUpper())
-            {
-                case "SQLSERVER":
-                    dbContextOptions.UseSqlServer(connectionString);
-                    break;
-                default:
-                    dbContextOptions.UseNpgsql(connectionString);
-                    break;
-            }
-        }
-
-        public static void ConfigureMainDbContext(
-           DbContextOptionsBuilder<MainDbContext> dbContextOptions,
-           string provider,
-           string connectionString
-           )
-        {
-            ConfigureProvider(dbContextOptions, provider, connectionString);
+            dbContextOptions.UseNpgsql(connectionString);
         }
     }
 }

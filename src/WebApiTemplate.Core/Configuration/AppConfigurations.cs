@@ -6,7 +6,7 @@ namespace WebApiTemplate.Core.Configuration
 {
     public static class AppConfigurations
     {
-                private static readonly ConcurrentDictionary<string, IConfigurationRoot> ConfigurationCache;
+        private static readonly ConcurrentDictionary<string, IConfigurationRoot> ConfigurationCache;
 
         static AppConfigurations()
         {
@@ -32,7 +32,7 @@ namespace WebApiTemplate.Core.Configuration
             {
                 builder = builder.AddJsonFile($"appsettings.{environmentName}.json", optional: true);
             }
-            
+
             builder = builder.AddEnvironmentVariables();
 
             return builder.Build();

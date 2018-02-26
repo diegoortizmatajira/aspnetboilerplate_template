@@ -1,7 +1,7 @@
 #!/bin/bash
 projectName="WebApiTemplate"
-imageName="webapi_image"
-serviceName="webapi_service"
+imageName="web_image"
+serviceName="web_service"
 runtimeID="linux-x64"
 framework="netcoreapp2.0"
 prefix="local"
